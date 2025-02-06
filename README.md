@@ -1,99 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - GitHub Projects</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #BE0000;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .project-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-        .project-card {
-            background-color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            width: 30%;
-            text-align: center;
-        }
-        .project-card h3 {
-            margin: 0.5rem 0;
-        }
-        .project-card a {
-            color: #BE0000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        footer {
-            background-color: #808080;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Your Name</h1>
-        <p>GitHub Projects</p>
-    </header>
+import React from 'react';
 
-    <section>
-        <h2>Welcome to My Projects</h2>
-        <p>Here are some of the projects I've been working on. Click the project names to check them out on GitHub!</p>
-        
-        <div class="project-list">
-            <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Description of your project</p>
-                <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
-            </div>
-            <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Description of your project</p>
-                <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
-            </div>
-            <div class="project-card">
-                <h3>Project 3</h3>
-                <p>Description of your project</p>
-                <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
-            </div>
+const Portfolio = () => {
+  const socialLinks = [
+    { name: 'Resume', icon: '📄', href: '#' },
+    { name: 'LinkedIn', icon: '🔗', href: '#' },
+    { name: 'GitHub', icon: '💻', href: '#' },
+    { name: 'Email', icon: '✉️', href: '#' }
+  ];
+
+  const navLinks = ['ABOUT', 'EDUCATION', 'EXPERIENCE', 'PROJECTS'];
+
+  return (
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-8">
+      {/* Logo Section */}
+      <div className="mb-16 mt-8">
+        <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center mb-8">
+          <span className="text-2xl">💎</span>
         </div>
-    </section>
+      </div>
 
-    <footer>
-        <p>Follow me on <a href="https://github.com/yourusername" target="_blank">GitHub</a></p>
-    </footer>
-</body>
-</html>
+      {/* Header Section */}
+      <div className="text-center mb-16">
+        <h1 className="text-4xl font-bold mb-4">YOUR NAME</h1>
+        <p className="text-gray-400 mb-4 max-w-2xl">
+          COMPUTER SCIENCE GRADUATE STUDENT AT [YOUR UNIVERSITY] (EXPECTED GRADUATION: [DATE])
+        </p>
+        <p className="text-gray-400">
+          CURRENTLY SEEKING NEW GRADUATE ROLES FOR 2025
+        </p>
+      </div>
+
+      {/* Social Links */}
+      <div className="flex space-x-6 mb-16">
+        {socialLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.href}
+            className="w-10 h-10 border border-white rounded-full flex items-center justify-center hover:bg-white hover:text-gray-900 transition-colors"
+          >
+            {link.icon}
+          </a>
+        ))}
+      </div>
+
+      {/* Navigation */}
+      <div className="border-t border-gray-700 pt-8 w-full max-w-2xl">
+        <nav className="flex justify-center">
+          <div className="grid grid-cols-4 gap-4">
+            {navLinks.map((link) => (
+              <button
+                key={link}
+                className="px-6 py-2 text-sm border border-gray-700 rounded hover:bg-white hover:text-gray-900 transition-colors"
+              >
+                {link}
+              </button>
+            ))}
+          </div>
+        </nav>
+      </div>
+    </div>
+  );
+};
+
+export default Portfolio;
