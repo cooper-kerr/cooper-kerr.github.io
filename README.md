@@ -1,175 +1,930 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saurabh Loya - Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            background-color: rgb(26, 26, 26);
-            color: white;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
+<html><head>
+    <title>Saurabh Loya</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  <style>.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #0000ff;
+  --rdp-background-color: #e7edff;
+  --rdp-accent-color-dark: #3003e1;
+  --rdp-background-color-dark: #180270;
+  --rdp-outline: 2px solid var(--rdp-accent-color); /* Outline border for focused elements */
+  --rdp-outline-selected: 2px solid rgba(0, 0, 0, 0.75); /* Outline border for focused _and_ selected elements */
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+  margin: 1em;
+}
 
-        .vertical-line {
-            width: 1px;
-            height: 120px;
-            background-color: rgba(255, 255, 255, 0.8);
-            margin-bottom: -30px;
-        }
+/* Hide elements for devices that are not screen readers */
+.rdp-vhidden {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute !important;
+  top: 0;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  border: 0 !important;
+}
 
-        .logo-circle {
-            width: 60px;
-            height: 60px;
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 40px;
-            background-color: rgb(26, 26, 26);
-        }
+/* Buttons */
+.rdp-button_reset {
+  appearance: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  color: inherit;
+  outline: none;
+  background: none;
+  font: inherit;
 
-        .logo-circle svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
 
-        h1 {
-            font-size: 42px;
-            font-weight: 400;
-            margin: 0 0 20px 0;
-            letter-spacing: 1px;
-        }
+.rdp-button {
+  border: 2px solid transparent;
+}
 
-        .subtitle {
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            text-align: center;
-            margin: 8px 0;
-            color: rgba(255, 255, 255, 0.9);
-        }
+.rdp-button[disabled] {
+  opacity: 0.25;
+}
 
-        .social-links {
-            display: flex;
-            gap: 20px;
-            margin: 40px 0 80px 0;
-        }
+.rdp-button:not([disabled]) {
+  cursor: pointer;
+}
 
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            border: 1.5px solid rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
+.rdp-button:focus:not([disabled]),
+.rdp-button:active:not([disabled]) {
+  color: inherit;
+  border: var(--rdp-outline);
+  background-color: var(--rdp-background-color);
+}
 
-        .social-icon:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
+.rdp-button:hover:not([disabled]) {
+  background-color: var(--rdp-background-color);
+}
 
-        .nav-section {
-            position: relative;
-            padding-top: 120px;
-        }
+.rdp-months {
+  display: flex;
+}
 
-        .nav-line {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 1px;
-            height: 120px;
-            background-color: rgba(255, 255, 255, 0.8);
-            transform: translateX(-50%);
-        }
+.rdp-month {
+  margin: 0 1em;
+}
 
-        .nav-container {
-            border: 1.5px solid rgba(255, 255, 255, 0.8);
-            border-radius: 4px;
-            display: inline-flex;
-        }
+.rdp-month:first-child {
+  margin-left: 0;
+}
 
-        .nav-button {
-            padding: 12px 40px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
-        }
+.rdp-month:last-child {
+  margin-right: 0;
+}
 
-        .nav-button:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="vertical-line"></div>
-        <div class="logo-circle">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 21L2 7h20L12 21z"/>
-            </svg>
+.rdp-table {
+  margin: 0;
+  max-width: calc(var(--rdp-cell-size) * 7);
+  border-collapse: collapse;
+}
+
+.rdp-with_weeknumber .rdp-table {
+  max-width: calc(var(--rdp-cell-size) * 8);
+  border-collapse: collapse;
+}
+
+.rdp-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  text-align: left;
+}
+
+.rdp-multiple_months .rdp-caption {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.rdp-caption_dropdowns {
+  position: relative;
+  display: inline-flex;
+}
+
+.rdp-caption_label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0.25em;
+  white-space: nowrap;
+  color: currentColor;
+  border: 0;
+  border: 2px solid transparent;
+  font-family: inherit;
+  font-size: 140%;
+  font-weight: bold;
+}
+
+.rdp-nav {
+  white-space: nowrap;
+}
+
+.rdp-multiple_months .rdp-caption_start .rdp-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.rdp-multiple_months .rdp-caption_end .rdp-nav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.rdp-nav_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--rdp-cell-size);
+  height: var(--rdp-cell-size);
+  padding: 0.25em;
+  border-radius: 100%;
+}
+
+/* ---------- */
+/* Dropdowns  */
+/* ---------- */
+
+.rdp-dropdown_year,
+.rdp-dropdown_month {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.rdp-dropdown {
+  appearance: none;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: inherit;
+  opacity: 0;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.rdp-dropdown[disabled] {
+  opacity: unset;
+  color: unset;
+}
+
+.rdp-dropdown:focus:not([disabled]) + .rdp-caption_label,
+.rdp-dropdown:active:not([disabled]) + .rdp-caption_label {
+  border: var(--rdp-outline);
+  border-radius: 6px;
+  background-color: var(--rdp-background-color);
+}
+
+.rdp-dropdown_icon {
+  margin: 0 0 0 5px;
+}
+
+.rdp-head {
+  border: 0;
+}
+
+.rdp-head_row,
+.rdp-row {
+  height: 100%;
+}
+
+.rdp-head_cell {
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: 700;
+  text-align: center;
+  height: 100%;
+  height: var(--rdp-cell-size);
+  padding: 0;
+}
+
+.rdp-tbody {
+  border: 0;
+}
+
+.rdp-tfoot {
+  margin: 0.5em;
+}
+
+.rdp-cell {
+  width: var(--rdp-cell-size);
+  height: 100%;
+  height: var(--rdp-cell-size);
+  padding: 0;
+  text-align: center;
+}
+
+.rdp-weeknumber {
+  font-size: 0.75em;
+}
+
+.rdp-weeknumber,
+.rdp-day {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--rdp-cell-size);
+  max-width: var(--rdp-cell-size);
+  height: var(--rdp-cell-size);
+  margin: 0;
+  border: 2px solid transparent;
+  border-radius: 100%;
+}
+
+.rdp-day_today:not(.rdp-day_outside) {
+  font-weight: bold;
+}
+
+.rdp-day_selected:not([disabled]),
+.rdp-day_selected:focus:not([disabled]),
+.rdp-day_selected:active:not([disabled]),
+.rdp-day_selected:hover:not([disabled]) {
+  color: white;
+  background-color: var(--rdp-accent-color);
+}
+
+.rdp-day_selected:focus:not([disabled]) {
+  border: var(--rdp-outline-selected);
+}
+
+.rdp:not([dir='rtl']) .rdp-day_range_start:not(.rdp-day_range_end) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.rdp:not([dir='rtl']) .rdp-day_range_end:not(.rdp-day_range_start) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.rdp[dir='rtl'] .rdp-day_range_start:not(.rdp-day_range_end) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.rdp[dir='rtl'] .rdp-day_range_end:not(.rdp-day_range_start) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.rdp-day_range_end.rdp-day_range_start {
+  border-radius: 100%;
+}
+
+.rdp-day_range_middle {
+  border-radius: 0;
+}
+</style></head>
+  <body class="" data-new-gr-c-s-check-loaded="14.1221.0" data-gr-ext-installed="">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="logo">
+          <span class="icon fa-gem"></span>
         </div>
-
-        <h1>SAURABH LOYA</h1>
-        <p class="subtitle">COMPUTER SCIENCE GRADUATE STUDENT AT THE UNIVERSITY OF UTAH (EXPECTED GRADUATION: MAY 2025)</p>
-        <p class="subtitle">CURRENTLY SEEKING NEW GRADUATE ROLES FOR 2025</p>
-
-        <div class="social-links">
-            <a href="#" class="social-icon" aria-label="Resume">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
-                </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="LinkedIn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                </svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="Email">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-            </a>
+        <div class="content">
+          <div class="inner">
+            <h1>Saurabh Loya</h1>
+            <p>
+              Computer Science Graduate Student at The University of Utah
+              (Expected Graduation: May 2025)
+            </p>
+            <p>Currently seeking new graduate roles for 2025</p>
+            <ul class="icons">
+              <li>
+                <a href="files\Saurabh_Loya_Resume.pdf " target="_blank" class="icon fa-file-pdf" data-tooltip="Resume"><span class="label">Resume</span></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/saurabhloya" target="_blank" class="icon brands fa-linkedin-in" data-tooltip="LinkedIn"><span class="label">LinkedIn</span></a>
+              </li>
+              <li>
+                <a href="https://github.com/saurabhloya" target="_blank" class="icon brands fa-github" data-tooltip="GitHub"><span class="label">GitHub</span></a>
+              </li>
+              <li>
+                <a href="mailto:s.loya21@gmail.com" target="_blank" class="icon fa-envelope" data-tooltip="Mail"><span class="label">Email</span></a>
+              </li>
+            </ul>
+          </div>
         </div>
+        <nav class="use-middle">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#intro">Education</a></li>
+            <li class="is-middle"><a href="#contact">Experience</a></li>
+            <li><a href="#work">Projects</a></li>
 
-        <div class="nav-section">
-            <div class="nav-line"></div>
-            <div class="nav-container">
-                <button class="nav-button">ABOUT</button>
-                <button class="nav-button">EDUCATION</button>
-                <button class="nav-button">EXPERIENCE</button>
-                <button class="nav-button">PROJECTS</button>
-            </div>
-        </div>
+            <!-- <li><a href="#elements">Elements</a></li> -->
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Main -->
+      <div id="main" style="display: none;">
+        <!-- About -->
+        <article id="about" style="display: none;">
+          <h2 class="major">About</h2>
+          <span class="image main"><img src="images/saurabh.jpg" alt=""></span>
+          <p>
+            I am a graduate student at
+            <a href="https://www.utah.edu/">The University of Utah</a> where I'm
+            pursuing my master's in Computer Science. I am in my final semester,
+            with an expected graduation date of May 2, 2025.
+
+            <br>
+            <br>
+            Currently, I am working as an Data Scientist Intern at
+            <a href="https://www.bmwgroup.com/en/company/bmw-financial-services.html">BMW Financial Services NA</a>,
+            where I am working on loan optimization model to improve lending strategies and reduce risk for BMW Bank of North America team. 
+            Prior to graduate school, I had a great time working as a Software Engineer (Data Science) at
+            <a href="https://vwits.in/">Volkswagen Group Technology Solutions India.</a>
+            
+            <br>
+            <br>
+            I am passionate about leveraging my expertise in both software
+            development and data science to address challenges in healthcare,
+            security, and other socially impactful areas. In data science, I apply advanced statistical
+            techniques and machine learning algorithms to extract meaningful
+            insights from complex datasets, driving innovation and informed
+            decision-making. As a full-stack engineer, I develop end-to-end solutions, integrating front-end
+            interfaces with robust back-end systems to deliver comprehensive
+            software products.
+            <br>
+            <br>
+
+            Feel free to check out my
+            <a href="files\Saurabh_Loya_Resume.pdf" target="_blank">CV</a> and
+            drop me an <a href="mailto:s.loya21@gmail.com">email</a> if you want
+            to chat with me!
+          </p>
+        <div class="close">Close</div></article>
+
+        <!-- Education -->
+        <article id="intro" style="display: none;">
+          <h2 class="major">Education</h2>
+          <span class="image main"><img src="images/UofU_Logo.jpg" alt=""></span>
+          <p>
+            Degree: Master of Science<br>
+            Major : Computer Science<br>
+            GPA : 3.5/4.0<br>
+            Location : Salt Lake City, UT, US<br>
+            Graduation Date : May 2025<br>
+            Coursework : Advanced Algorithm, Deep Learning, Machine Learning,
+            Natural Language Processing, Visualization for Data Science,
+            Visualization for Scientific Data, Distributed Systems, Computer
+            Architecture, Software and System Security.<br>
+          </p>
+          <span class="image main"><img src="images/MIT.jpeg" alt=""></span>
+          <p>
+            Degree: Bachelors of Technology<br>
+            Major : Computer Science<br>
+            GPA : 3.8/4.0<br>
+            Location : Pune, Maharashtra, India<br>
+            Graduation Date : May 2021<br>
+            Coursework : Data Structure and Algorithms, Operating Systems,
+            Computer Networks, Software Modelling and Design, Database
+            Management System, Data Warehouse and Data Mining, Big Data
+            Analytics, Machine Learning, Artificial Intelligence, Business
+            Intelligence, Cloud Computing, UIUX, Finance and Costing.<br>
+          </p>
+        <div class="close">Close</div></article>
+
+        <!-- Experience -->
+        <article id="contact" style="display: none;">
+          <h2 class="major">Work Experience</h2>
+          <span class="image main"><img src="images/BMW.png" alt=""></span>
+          <p>
+            Data Scientist Intern<br>
+            January 2025 - May 2025<br>
+            Job Location : Salt Lake City, Utah, USA<br>
+            Tech Stack: Python, SQL, Machine Learning, LLM, Git<br>
+          </p>
+          <span class="image main"><img src="images/Volkswagen.png" alt=""></span>
+          <p>
+            Software Engineer<br>
+            August 2021 - July 2023<br>
+            Job Location : Pune, Maharashtra, India<br>
+            Tech Stack: Python, Java, Spring, Flask, SQL, MongoDB, Angular, NLP
+            Power BI, AWS, Azure, Apache Airflow, Git<br>
+            Awards:
+            <a href="files\Instapad.pdf " target="_blank">Instapat Award</a>,
+            <a href="files\Innovation.pdf" target="_blank">Innovation Award</a>,
+            <a href="files\Achievers.pdf" target="_blank">Achievers Award</a>
+          </p>
+          <span class="image main"><img src="images/ForceArk.jpeg" alt=""></span>
+          <p>
+            Salesforce Developer Intern<br>
+            June 2021 - August 2021<br>
+            Job Location : Pune, Maharashtra, India<br>
+            Tech Stack: Salesforce, Apex Programming, Lightning Web Components,
+            Jira
+          </p>
+
+          <h2 class="major">Other Experience</h2>
+          <span class="image main"><img src="images/KSOC.jpg" alt=""></span>
+          <p>
+            Graduate Teaching Assistant<br>
+            January 2024 - May 2024<br>
+            Job Location : Salt Lake City, UT, US<br>
+          </p>
+          <span class="image main"><img src="images/Clone_Futura.webp" alt=""></span>
+          <p>
+            Python Tutor<br>
+            November 2020 - May 2021<br>
+            Job Location : Remote, India<br>
+          </p>
+        <div class="close">Close</div></article>
+
+        <!-- Projects -->
+        <article id="work" style="display: none;">
+          <h2 class="major">Projects</h2>
+
+          <span class="image main"><img src="images/citibike.webp" alt=""></span>
+          <p>
+            <b>Citi Bike Rental</b> - Analytics and Forecasting using Apache
+            Spark and Prophet<br>
+            <br>
+          </p>
+          <p>
+            Developed analytics and forecasting models for Citibike rental data
+            leveraging Apache Spark and Facebook Prophet, enabling informed
+            decision-making and optimized resource allocation in urban
+            transportation systems.
+            <br>
+            <br>
+            <b>Source Code:</b>
+            <a href="https://github.com/saurabhloya/Time-Series-Analytics-and-Forecasting-with-Apache-Spark" target="_blank">Time-Series-Analytics-and-Forecasting-with-Apache-Spark</a><br>
+            <b>Technology:</b> Python, Apache Spark, Prophet
+          </p>
+
+          <span class="image main"><img src="images/medical-chatbot.jpeg" alt=""></span>
+          <p>
+            <b>Medical Chatbot</b> - Leveraging Llama 2, Pinecone, LangChain,
+            and Flask to deliver accurate and timely health information. <br>
+            <br>
+          </p>
+          <p>
+            Developed an advanced Medical Chatbot using LLaMA2, LangChain,
+            Pinecone VectorDB and Flask to provide instant, accurate medical
+            information and enhance patient engagement<br>
+            <br>
+            <b>Source Code:</b>
+            <a href="https://github.com/saurabhloya/Medical-Chatbot" target="_blank">Medical Chatbot</a><br>
+            <b>Technology:</b> Python, Langchain, Vector Database, Flask,
+            Generative AI, LLM <br>
+            <b>Hackathon Winner: </b>
+            <a href="https://devpost.com/software/medical-chatbot-o07lpw" target="_blank">Taskformer's AI Chatbot Hackathon
+            </a>
+          </p>
+
+          <span class="image main"><img src="images/pokemon.jpg" alt=""></span>
+          <p>
+            <b>Visual Journey in the world of Pokemon</b> - Interactive Data
+            Visualization Tool<br>
+            <br>
+          </p>
+          <p>
+            Developed an award-winning interactive tool to explore Pokémon
+            stats, type matchups, and battle outcomes, securing the winner
+            position in a class of 120 students.
+            <br>
+            <br>
+            <b>Source Code:</b>
+            <a href="https://github.com/dataviscourse2024/group-project-visual-journey-in-the-world-of-pokemon" target="_blank">visual-journey-in-the-world-of-pokemon</a><br>
+            <b>Technology:</b> D3.js, HTML, CSS, Python <br>
+            <b>Website Link: </b>
+            <a href="https://dataviscourse2024.github.io/group-project-visual-journey-in-the-world-of-pokemon/" target="_blank">Explore the Pokémon World
+            </a>
+          </p>
+
+          <span class="image main"><img src="images/MCQ.jpg" alt=""></span>
+          <p>
+            <b>MCQ Generator Web Application</b> - Harnessing OpenAI's Language
+            Model to automate multiple-choice question generation. <br>
+            <br>
+          </p>
+          <p>
+            Developed a web application using OpenAI's language model,
+            Langchain, and Streamlit to automate the creation of multiple-choice
+            questions. This tool provides educators and content creators with
+            customizable options for generating high-quality MCQs based on any
+            input content.<br>
+            <br>
+            <b>Source Code:</b>
+            <a href="https://github.com/saurabhloya/MCQ_Generator" target="_blank">MCQ Generator Web Application</a><br>
+            <b>Technology:</b> Python, Langchain, Streamlit, OpenAI API,
+            Generative AI, LLM <br>
+          </p>
+
+          <span class="image main"><img src="images/meeting.jpeg" alt=""></span>
+          <p>
+            <b>MeetingMate</b> - Automated reminders for Google Calendar events.
+            <br>
+            <br>
+          </p>
+          <p>
+            Automation tool integrated with the Google Calendar and Gmail APIs
+            to send timely reminders to attendees of upcoming events.<br>
+            <br>
+            <b>Source Code:</b>
+            <a href="https://github.com/saurabhloya/MeetingMate" target="_blank">MeetingMate</a><br>
+            <b>Technology:</b> Python, Streamlit, Google APIs <br>
+          </p>
+
+          <span class="image main"><img src="images/Traffic-Signs.jpg" alt=""></span>
+          <p>
+            <b>Traffic Sign Classification</b> - Decoding signs, guiding
+            journeys. <br>
+            <br>
+          </p>
+          <p>
+            Built a predictive model with a convolutional neural network (CNN)
+            for Traffic Sign Classification, achieving a 96% accuracy across 42
+            classes of traffic signs.<br>
+            <br>
+            <b>Source Code:</b>
+            <a href="https://github.com/saurabhloya/Traffic-Sign-Classification" target="_blank">Traffic Sign Classification</a><br>
+            <b>Technology:</b> Python, CNN, Deep Learning, Tkinter <br>
+            <b>Research Paper:</b>
+            <a href="https://arxiv.org/html/2403.08283v1" target="_blank">Optimized Detection and Classification on GTRSB: Advancing
+              Traffic Sign Recognition with Convolutional Neural Networks</a><br>
+          </p>
+
+          <span class="image main"><img src="images/chatbot.jpeg" alt=""></span>
+          <p>
+            <b>AutoBotTrain</b> - Automated Chatbot Training Pipeline<br>
+            <br>
+          </p>
+          <p>
+            Crafted an automated pipeline to efficiently generate utterances,
+            responses, and intents from user-entered text or business documents,
+            streamlining chatbot training process.<br>
+            <br>
+            <b>Source Code:</b>
+            <a href="https://github.com/saurabhloya/autoBotTrain" target="_blank">AutoBotTrain</a><br>
+            <b>Technology:</b> Python, Spacy, NLP, Machine Learning
+          </p>
+
+          <span class="image main"><img src="images/medicine_recomendation.png" alt=""></span>
+          <p>
+            <b>LLM based Medicine Recommendation System</b><br>
+            <br>
+          </p>
+          <p>
+            Implemented an AI-driven medicine recommendation system utilizing
+            Large Language Model (LLM) technology to suggest medications based
+            on patient symptoms while providing insights into potential side
+            effects.<br>
+            <br>
+            <b>Source Code:</b>
+            <a href="" target="_blank">Medicine Recommendation System</a><br>
+            <b>Technology:</b> Python, Spacy, Machine Learning, Large Language
+            Model
+          </p>
+
+          <span class="image main"><img src="images/ethereum-smart-contract.jpg" alt=""></span>
+          <p>
+            <b>Smart Contract Fuzzing</b> - Enhancing Security in Blockchain
+            Applications<br>
+            <br>
+          </p>
+          <p>
+            Utilizing fuzzing techniques and static analysis, this project
+            meticulously identifies vulnerabilities within Ethereum smart
+            contracts, bolstering their security and fortifying decentralized
+            applications against potential threats.<br>
+            <br>
+            <b>Source Code:</b>
+            <a href="https://github.com/saurabhloya/Smart-Contract-Fuzzing" target="_blank">Smart-Contract-Fuzzing</a><br>
+            <b>Technology:</b> Solidity, Echidna
+          </p>
+        <div class="close">Close</div></article>
+
+        <!-- Contact -->
+        <!-- <article id="contact1">
+								<h2 class="major">Contact</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article> -->
+
+        <!-- Elements -->
+        <!-- <article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article> -->
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <!-- <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p> -->
+      </footer>
     </div>
-</body>
-</html>
+
+    <!-- BG -->
+    <div id="bg"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
