@@ -1,6 +1,6 @@
 # Data Scientist
 
-### Technical Skills: Python SQL, R
+### Technical Skills: Python, SQL, R
 
 ## Education
 - B.S Mathematics w/ Stats  
