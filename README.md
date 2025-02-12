@@ -5,7 +5,7 @@
 ## Education
 - **B.S Mathematics w/ Stats**  
   The University of Utah (May 2028)  
-- **B.S Quantitative Analysis of Markets and Organizations ([QAMO](https://eccles.utah.edu/programs/undergraduate/qamo/qamo-difference/))\***
+- **B.S Quantitative Analysis of Markets and Organizations ([QAMO](https://eccles.utah.edu/programs/undergraduate/qamo/qamo-difference/))**
   The University of Utah (May 2027)
  
 
