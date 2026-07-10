@@ -4,6 +4,12 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+document.body.classList.remove('is-preload');
+
+window.portfolioReady = window.portfolioReady || Promise.resolve();
+
+window.portfolioReady.then(function() {
+
 (function($) {
 
 	var	$window = $(window),
@@ -22,13 +28,6 @@
 			small:    [ '481px',   '736px'  ],
 			xsmall:   [ '361px',   '480px'  ],
 			xxsmall:  [ null,      '360px'  ]
-		});
-
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
 		});
 
 	// Fix: Flexbox min-height bug on IE.
@@ -393,9 +392,17 @@
 
 			// Initial article.
 				if (location.hash != ''
-				&&	location.hash != '#')
-					$window.on('load', function() {
+				&&	location.hash != '#') {
+
+					if (document.readyState === 'complete')
 						$main._show(location.hash.substr(1), true);
-					});
+					else
+						$window.on('load', function() {
+							$main._show(location.hash.substr(1), true);
+						});
+
+				}
 
 })(jQuery);
+
+});

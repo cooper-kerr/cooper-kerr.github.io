@@ -1,0 +1,21 @@
+{
+  "programming_languages": [
+    "Python/Scikit-Learn/TensorFlow",
+    "R",
+    "SQL"
+  ],
+  "ml_data_libraries": [
+    "Scikit-Learn",
+    "TensorFlow"
+  ],
+  "cloud_platforms": [
+    "Vercel",
+    "Firebase/Firestore",
+    "AWS S3/EC2"
+  ],
+  "tools": [
+    "Git",
+    "Claude Code",
+    "PowerBI"
+  ]
+}

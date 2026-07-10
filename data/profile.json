@@ -1,0 +1,32 @@
+{
+  "name": "Cooper P. Kerr",
+  "bio": "Math and Quantitative Analysis student at the University of Utah building predictive models at the intersection of sports and data — currently applying that at PING Golf, in university sports-science research, and in independent projects.",
+  "email": "coopkerr@icloud.com",
+  "linkedin": "https://www.linkedin.com/in/cooper-kerr/",
+  "github": "https://cooper-kerr.github.io/",
+  "education": [
+    {
+      "institution": "University of Utah, David Eccles School of Business",
+      "degree": "BS in Mathematics, Statistics Emphasis",
+      "graduation": "May 2028"
+    },
+    {
+      "institution": "University of Utah, College of Science",
+      "degree": "BS in Quantitative Analysis of Markets and Organizations",
+      "graduation": "May 2028"
+    }
+  ],
+  "gpa": "3.88/4.00",
+  "scholarships": [
+    "Utah Flagship Scholarship",
+    "Marriner S. Eccles Scholarship"
+  ],
+  "coursework": [
+    "Business Econometrics",
+    "Introduction to Data Science",
+    "Mathematical Finance",
+    "Applied Statistics",
+    "Banking & Financial Systems",
+    "Game Theory"
+  ]
+}

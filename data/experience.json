@@ -1,0 +1,36 @@
+[
+  {
+    "company": "PING Golf – Fitting & Performance Science",
+    "location": "Phoenix, AZ",
+    "title": "Data Scientist Intern",
+    "dates": "May 2026 – Present",
+    "bullets": [
+      "Analyzed API request volume and menu-usage patterns for PING Copilot pre- and post-redesign, identifying usage and engagement shifts and delivering actionable, data-backed findings to stakeholders across PING's Copilot ecosystem",
+      "Leading the refactor and redesign of PING's WebFit Fullbag website (historically used ~40,000 times/day), improving core logic to increase recommendation accuracy ahead of a planned relaunch",
+      "Redesigned a predictive model estimating wedge launch conditions from 7-iron launch data alone, achieving prediction accuracy of 87% and reducing mean absolute error by roughly 40% across all launch condition metrics"
+    ]
+  },
+  {
+    "company": "Applied Health & Performance Science – University of Utah",
+    "location": "Salt Lake City, UT",
+    "title": "Sports Science Research & Data Analytics Intern",
+    "dates": "Spring 2025, Spring 2026",
+    "bullets": [
+      "Built an automated recovery-recommendation system (SmartAbase + R) using decision-tree logic to deliver personalized recovery plans to 15 athletes based on soreness, physical, and neurological fatigue metrics",
+      "Queried and analyzed athlete performance databases in SQL and Python, cross-referencing exercise science literature to identify positional differences in physiological load across 120 practices and games",
+      "Synthesized findings into reports and visualizations for coaches and performance staff, supporting data-backed decisions on athlete workload management and position-specific training targets",
+      "Collected and quality-controlled performance data (Catapult wearables, Force plates, VBT systems) across 60 different athletes and 3 different teams to track force output, player load and velocity-based metrics that are key in ensuring athlete performance"
+    ]
+  },
+  {
+    "company": "University of Sydney (Study Abroad)",
+    "location": "Sydney, Australia",
+    "title": "Research Intern",
+    "dates": "July – December 2025",
+    "bullets": [
+      "Built a web-based analytics platform (hosted on Vercel) that ingested real-time options and equity market data across 25+ stocks and funds via Yahoo Finance and U.S. Treasury APIs to identify and visualize financial bubbles",
+      "Engineered an automated Python and GitHub pipeline to extract, clean, and model 30,000+ real-time options records daily, allowing for free daily updates of bubble estimates instead of paying and waiting 1 year for data releases",
+      "Translated theoretical finance research into a client-ready decision tool used to inform policy and investor discussions, bridging technical modeling with business-facing communication"
+    ]
+  }
+]

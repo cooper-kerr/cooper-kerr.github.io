@@ -1,0 +1,150 @@
+[
+  {
+    "title": "F1 Predictive Analysis Project",
+    "slug": "f1-predictive-analysis",
+    "description": [
+      "Built five predictive and descriptive analysis pipelines on FastF1 data: tire degradation modeling, weather-effects analysis, pit-window forecasting, undercut/overcut strategy classification, and race-position predictability.",
+      "The project is methodology-focused as much as feature-focused: it included auditing and fixing real target-leakage bugs across multiple pipelines, improving the validity of the modeling workflow instead of only optimizing headline accuracy.",
+      "The Streamlit demo is currently local-only; no public demo URL is listed yet."
+    ],
+    "tech_stack": [
+      "Python",
+      "FastF1",
+      "Streamlit",
+      "machine learning"
+    ],
+    "links": [
+      {
+        "label": "GitHub Repo",
+        "url": "https://github.com/cooper-kerr/F1-Predictive-Analysis-Project"
+      }
+    ],
+    "image_paths": [],
+    "relevance_tags": [
+      "data-science",
+      "machine-learning",
+      "sports-analytics",
+      "python"
+    ],
+    "status": "active"
+  },
+  {
+    "title": "Exploit Poker Trainer",
+    "slug": "poker-trainer",
+    "description": [
+      "Shipped an interactive poker training product focused on accelerating decision-making through structured play against adaptive bots and node-locking workflows that isolate specific game states.",
+      "Built as a solo full-stack product with Claude Code, combining poker-domain logic, game-tree constraints, and UX refinements into a practice environment for opponent archetypes and targeted repetition.",
+      "The product evolved through an AWS-to-Firebase/Firestore migration and includes an automated social content pipeline through Claude Cowork."
+    ],
+    "tech_stack": [
+      "Claude Code",
+      "Firebase/Firestore",
+      "AWS S3/EC2"
+    ],
+    "links": [
+      {
+        "label": "Live Product",
+        "url": "https://exploitpt.com"
+      }
+    ],
+    "image_paths": [
+      "images/Poker_Dashboard.png"
+    ],
+    "relevance_tags": [
+      "full-stack",
+      "ai-assisted-development",
+      "product",
+      "poker"
+    ],
+    "status": "active"
+  },
+  {
+    "title": "Sports Science / Positional Demands",
+    "slug": "sports-science-positional-demands",
+    "description": [
+      "Built sports-science analytics work for Applied Health & Performance Science, including an automated recovery-recommendation system using decision-tree logic, Smartabase workflows, 120 practices/games, and 60 athletes across 3 teams.",
+      "Merged the positional-demands analysis into the same body of work: Catapult wearable data was used to study match and training exposures across goalkeepers, defenders, midfielders, and attackers, with secondary defender analysis separating outside backs and center backs.",
+      "Supporting methodology included summary statistics, independent t-tests for duration, player load, PL/min, total distance, and high-speed distance, plus Mann-Whitney U tests for non-normal IMA metrics. Statistical significance was evaluated at p-values <= 0.05."
+    ],
+    "tech_stack": [
+      "Catapult",
+      "Smartabase",
+      "statistical testing",
+      "decision-tree logic"
+    ],
+    "links": [],
+    "image_paths": [
+      "images/Table_Soccer.png",
+      "images/Figure_1.1.png",
+      "images/Figure_1.2.png"
+    ],
+    "relevance_tags": [
+      "sports-analytics",
+      "data-science",
+      "statistics",
+      "research"
+    ],
+    "status": "active"
+  },
+  {
+    "title": "Financial Bubble Project",
+    "slug": "financial-bubble-internship",
+    "description": [
+      "During my research internship at the University of Sydney, I designed and built a web-based platform that identifies and visualizes financial market bubbles using Dr. Simon Kwok's theoretical research on bubble dynamics.",
+      "The system integrates real-time options and equity market data across more than 25 stocks and funds by leveraging Yahoo Finance and U.S. Treasury APIs, transforming complex financial signals into interactive visualizations.",
+      "To support scalability and automation, I developed an optimized Python-based GitHub pipeline that extracts, cleans, and models 30,000+ real-time options records daily and refreshes bubble indicators for a client-ready decision-support tool."
+    ],
+    "tech_stack": [
+      "Python",
+      "Yahoo Finance API",
+      "U.S. Treasury APIs",
+      "GitHub automation",
+      "Vercel"
+    ],
+    "links": [
+      {
+        "label": "Live Dashboard",
+        "url": "https://financial-bubble-detection-dashboar.vercel.app/"
+      }
+    ],
+    "image_paths": [
+      "images/Financial_Bubble_ss.png"
+    ],
+    "relevance_tags": [
+      "finance",
+      "data-science",
+      "python",
+      "dashboard"
+    ],
+    "status": "completed"
+  },
+  {
+    "title": "Summer Math Research",
+    "slug": "math-research",
+    "description": [
+      "Conducted an independent research project exploring the geometry of the 2-dimensional unit sphere, with a focus on distance-preserving transformations and the limits of mapping curved spaces to the plane.",
+      "The project formally classified isometries of the sphere, showing that every spherical isometry can be expressed as a composition of at most three reflections, leading to rotations and glide reflections as fundamental cases.",
+      "Investigated stereographic and Archimedean projections, analyzed the tradeoff between angle and area preservation, and proved that no isometry exists between the 2-dimensional sphere and 2-dimensional plane."
+    ],
+    "tech_stack": [
+      "spherical geometry",
+      "proof writing",
+      "metric spaces"
+    ],
+    "links": [
+      {
+        "label": "Research Paper",
+        "url": "assets/Spherical.pdf"
+      }
+    ],
+    "image_paths": [
+      "images/Spherical_triangle_3d.png"
+    ],
+    "relevance_tags": [
+      "mathematics",
+      "proof-based",
+      "research"
+    ],
+    "status": "academic"
+  }
+]

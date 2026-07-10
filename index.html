@@ -1,343 +1,56 @@
 <!DOCTYPE HTML>
-
-<html>
+<html lang="en">
 	<head>
-		<title>Portfolio by Cooper Kerr</title>
+		<title>Cooper P. Kerr | Data Science Portfolio</title>
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Cooper P. Kerr is a University of Utah Mathematics and Quantitative Analysis student building predictive models across sports analytics, finance, and applied data science." />
+		<link rel="canonical" href="https://cooper-kerr.github.io/" />
+		<meta property="og:title" content="Cooper P. Kerr | Data Science Portfolio" />
+		<meta property="og:description" content="Predictive modeling, sports analytics, finance dashboards, and proof-based mathematics projects by Cooper P. Kerr." />
+		<meta property="og:image" content="https://cooper-kerr.github.io/images/Financial_Bubble_ss.png" />
+		<meta property="og:url" content="https://cooper-kerr.github.io/" />
+		<meta property="og:type" content="website" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Cooper Kerr</h1>
-								<p>Take a look at my Sport Science & Data Science Projects!</p>
-								<p>Contact: coopkerr@icloud.com & linkedin.com/in/cooper-kerr/</p>
-							</div>
-						</div>
-						<nav>
-							<ul style="display: flex !important; flex-direction: row !important; justify-content: center !important; align-items: center !important;">
-								<li><a href="#financial-bubble-internship">Financial Bubble Dashboard</a></li>
-								<li><a href="#poker-trainer">Poker Trainer</a></li>
-								<li><a href="#Soccer-Positional-Demands">Soccer Positonal Demands</a></li>
-								<li><a href="#math-research">Math Research</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Financial Project -->
-							<article id="financial-bubble-internship">
-								<h2 class="major">Financial Bubble Project</h2>
-								<span class="image main"><img src="images/Financial_Bubble_ss.png" alt="" /></span>
-								<p>During my research internship at the University of Sydney, I designed and built a fully functional web-based platform that identifies and visualizes financial market bubbles using Dr. Simon Kwok’s theoretical research on bubble dynamics. The system integrates real-time options and equity market data across more than 25 stocks and funds by leveraging Yahoo Finance and U.S. Treasury APIs, transforming complex financial signals into intuitive, interactive visualizations. To support scalability and automation, I developed an optimized Python-based GitHub pipeline that extracts, cleans, and models over 30,000 real-time options data points and refreshes bubble indicators daily. This project translated advanced financial theory into a client-ready decision-support tool aimed at informing both policy makers and investors with timely, data-driven insights.</p>
-								<p>Please check out my work and the dashboard <a href="https://financial-bubble-detection-dashboar.vercel.app/">HERE!</a>.</p>
-							</article>
-
-						<!-- Poker Trainer -->
-							<article id="poker-trainer">
-								<h2 class="major">Poker Trainer</h2>
-								<span class="image main"><img src="images/Poker_Dashboard.png" alt="" /></span>
-								<p>Designed and built an interactive poker training application focused on accelerating decision-making through structured play against adaptive bots. The platform uses node locking to let users isolate specific game states and practice optimal responses against defined opponent archetypes (e.g., aggressive, passive, solver-tight), enabling targeted skill development rather than generic hand repetition.</p>
-								<p>The app was developed using Firebase Studio to intentionally push the boundaries of AI-assisted development, while layering in custom logic, game-tree constraints, and UX refinements through hands-on coding. This hybrid approach balanced rapid AI-generated scaffolding with human-driven optimization to ensure strategic correctness, performance stability, and a clean learning experience. </p>
-								<p>The result is a scalable training tool that blends game theory concepts with practical repetition—demonstrating how AI can accelerate product development when paired with strong domain knowledge and deliberate engineering oversight. Please feel free to checkout my work <a href="https://exploitpt.com" target="_blank">HERE.</a> </p>
-							</article>
-
-						<!-- Soccer Positional Demands -->
-							<article id="Soccer-Positional-Demands">
-								<h2 class="major">Soccer Positional Demands</h2>
-								<span class="image main"><img src="images/Table_Soccer.png" alt="" /></span>
-								<p>Soccer positions can broadly be broken into 4 distinct positions (goal keepers, defenders, midfielders, attackers) each with a unique role that calls  for different play strategies during matches Defenders can further be separated into the specific positions of outside back and center back for secondary analysis due to differences in their specific roles Wearable technology allows for tracking of player data making it possible to understand the physical demands being placed on players, at Utah we use Catapult devices worn between player's scapulae during all matches and trainings </p>
-								<p>Key metrics: Duration (volume metric, time players are in match) Total Player Load (volume metric, indicates overall work done in a session) Player Load/min (PL/min - density metric that shows work rate) Total Distance (volume metric, distance covered) Total High-Speed Distance (HSD - intensity metric, distance covered at over 80% of a player's personal career maximum velocity) High and Medium Inertial Movement Analysis Change of Direction/Acceleration/Deceleration (H&M IMA COD/Accel/Decel – intensity/volume metrics tracking directional movements and classifying them based on direction and intensity of movement) Dive Count and Dive Load (GK specific volume metric that quantifies the number of dives during a session and the overall work done during these dives)</p>
-								<span class="image main"><img src="images/Figure_1.1.png" alt="" /></span>
-								<p>Primary question: Is there a significant difference between each position's average performance metrics in matches? Secondary question: Are the exposures that players need to be prepared for in matches occurring in trainings? Why: Significant differences in match demands would indicate a need for different positional preparations in training</p>
-								<p>Data collection with Catapult units  during all field training and matches from Fall 2022 - Present Generation of summary statistics for each position and play type to understand averages and distribution of data Use of independent t-tests and significance tests for Total Duration, Player Load, PL/min, Total Distance, and Total High-Speed Distance Use of Mann Whitney U test and significance tests for IMA metrics due to the non-normal distribution and uneven sample sizes Statistical significance determined when p-values were   ≤ 0.05</p>
-								<span class="image main"><img src="images/Figure_1.2.png" alt="" /></span>
-								<p>There is a statistically significant difference (p≤0.05) between some positions for all key metrics (Total Player Load, PL/min, Total Duration, Total Distance, Total High-Speed Distance, H&M IMA COD/Accel/Decel) indicating that the demands of individual positions vary Players should receive position specific preparations  to address the statistically significant differences in position demands There is statistically significant differences in the relationship between individual position's key metric averages compared to team averages in matches vs training data indicating a misalignment in match and training exposures Within defenders, center backs and outside backs have different trends indicating a potential need to treat these positions as distinct There is a statistically significant difference between first half average PL/min and second half average PL/min, indicating players on average have a significantly lower density during the second half, likely due to fatigue</p>
-								<p>Small sample size required grouping of specialized positions to broader positions for main analysis. Defender's averages specifically were watered down to an average that doesn't represent either specific position Small sample size reduced statistical power and generalizability Reduced amount of goalkeeper data (one less season of match data for goalkeepers because units weren't worn, 12 instances of partially missing data in goalkeeper data used) 9 in-game field player instances of invalid data due to Catapult malfunctions</p>
-							</article>
-
-						<!-- Math Research -->
-							<article id="math-research">
-								<h2 class="major">Summer Math Research</h2>
-								<span class="image main"><img src="images/Spherical_triangle_3d.png" alt="" /></span>
-								<p>Conducted an independent research project exploring the geometry of the 2-dimensional unit sphere, with a focus on distance-preserving transformations and the limits of mapping curved spaces to the plane. The project formally classified isometries of the sphere, showing that every spherical isometry can be expressed as a composition of at most three reflections, leading to rotations and glide reflections as fundamental cases.</p>
-								<p>Investigated geometric projections from, contrasting stereographic (angle-preserving) and Archimedean (area-preserving) projections, and analyzed the inherent tradeoff between angle and area preservation. Concluded the project by proving that no isometry exists between the two demnisonal sphere and two demnsional plane, using constructive geometric arguments involving equidistant point sets and symmetry on the sphere versus the plane.</p>
-								<p>This work strengthened skills in geometric reasoning, proof construction, and abstraction, while connecting classical geometry to broader questions in topology and metric spaces. Please feel free to check out my work <a href="assets/Spherical.pdf" target="_blank">HERE.</a></p>
-							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
+		<div id="wrapper">
+			<header id="header">
+				<div class="logo">
+					<span class="icon fa-gem"></span>
+				</div>
+				<div class="content">
+					<div class="inner">
+						<h1>Cooper P. Kerr</h1>
+						<p>Loading portfolio content...</p>
 					</div>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#about">About</a></li>
+						<li><a href="#experience">Experience</a></li>
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#projects">Projects</a></li>
+					</ul>
+				</nav>
+			</header>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+			<div id="main"></div>
 
-			</div>
+			<footer id="footer">
+				<p class="copyright">Loading contact links...</p>
+			</footer>
+		</div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+		<div id="bg"></div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/content.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
