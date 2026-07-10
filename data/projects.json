@@ -50,6 +50,9 @@
     "image_paths": [
       "images/Poker_Dashboard.png"
     ],
+    "image_captions": [
+      "Exploit Poker Trainer dashboard showing the interactive training interface."
+    ],
     "relevance_tags": [
       "full-stack",
       "ai-assisted-development",
@@ -77,6 +80,11 @@
       "images/Table_Soccer.png",
       "images/Figure_1.1.png",
       "images/Figure_1.2.png"
+    ],
+    "image_captions": [
+      "Summary table comparing positional demands across team and positional groupings.",
+      "Figure 1.1: percent difference in high-speed distance by position during training.",
+      "Figure 1.2: percent difference in high-speed distance by position during matches."
     ],
     "relevance_tags": [
       "sports-analytics",
@@ -139,6 +147,9 @@
     ],
     "image_paths": [
       "images/Spherical_triangle_3d.png"
+    ],
+    "image_captions": [
+      "Spherical triangle diagram used in the geometry research project."
     ],
     "relevance_tags": [
       "mathematics",

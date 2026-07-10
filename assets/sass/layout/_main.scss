@@ -99,4 +99,99 @@
 				@include padding(2rem, 1.5rem, (1rem, 0, 0.5rem, 0));
 			}
 		}
+
+		#projects {
+			.project-entry {
+				border-top: solid _size(border-width) transparentize(_palette(border), 0.8);
+				margin-top: 2.75rem;
+				padding-top: 2.75rem;
+
+				&:first-of-type {
+					border-top: 0;
+					margin-top: 0;
+					padding-top: 0;
+				}
+
+				.project-heading {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 1rem;
+					margin-bottom: 1rem;
+
+					h3 {
+						margin-bottom: 0;
+					}
+				}
+
+				.project-status {
+					border: solid _size(border-width) transparentize(_palette(border), 0.75);
+					border-radius: 999px;
+					color: transparentize(_palette(fg), 0.15);
+					display: inline-flex;
+					flex: 0 0 auto;
+					font-size: 0.55rem;
+					font-weight: _font(weight-bold);
+					letter-spacing: 0.12rem;
+					line-height: 1;
+					padding: 0.45rem 0.65rem;
+					text-transform: uppercase;
+				}
+
+				.project-status-active {
+					background: rgba(109, 180, 128, 0.18);
+					border-color: rgba(109, 180, 128, 0.55);
+				}
+
+				.project-status-completed {
+					background: rgba(125, 164, 211, 0.18);
+					border-color: rgba(125, 164, 211, 0.55);
+				}
+
+				.project-status-academic {
+					background: rgba(214, 185, 112, 0.16);
+					border-color: rgba(214, 185, 112, 0.55);
+				}
+
+				.project-figure {
+					margin: 1.5rem 0 _size(element-margin) 0;
+
+					.image.main {
+						margin: 0;
+					}
+
+					figcaption {
+						color: transparentize(_palette(fg), 0.35);
+						font-size: 0.8rem;
+						line-height: 1.6;
+						margin-top: 0.65rem;
+					}
+				}
+
+				.project-meta-group {
+					margin: 1.25rem 0 0 0;
+
+					ul {
+						margin-bottom: 0;
+					}
+				}
+
+				.project-meta-label {
+					color: transparentize(_palette(fg), 0.1);
+					display: block;
+					font-size: 0.8rem;
+					font-weight: _font(weight-bold);
+					margin-bottom: 0.45rem;
+				}
+			}
+
+			@include breakpoint('<=small') {
+				.project-entry {
+					.project-heading {
+						align-items: flex-start;
+						flex-direction: column;
+					}
+				}
+			}
+		}
 	}

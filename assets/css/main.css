@@ -1620,6 +1620,99 @@ input, select, textarea {
 
 		}
 
+		#projects .project-entry {
+			border-top: solid 1px rgba(255, 255, 255, 0.2);
+			margin-top: 2.75rem;
+			padding-top: 2.75rem;
+		}
+
+			#projects .project-entry:first-of-type {
+				border-top: 0;
+				margin-top: 0;
+				padding-top: 0;
+			}
+
+			#projects .project-entry .project-heading {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 1rem;
+				margin-bottom: 1rem;
+			}
+
+				#projects .project-entry .project-heading h3 {
+					margin-bottom: 0;
+				}
+
+			#projects .project-entry .project-status {
+				border: solid 1px rgba(255, 255, 255, 0.25);
+				border-radius: 999px;
+				color: rgba(255, 255, 255, 0.85);
+				display: inline-flex;
+				flex: 0 0 auto;
+				font-size: 0.55rem;
+				font-weight: 600;
+				letter-spacing: 0.12rem;
+				line-height: 1;
+				padding: 0.45rem 0.65rem;
+				text-transform: uppercase;
+			}
+
+			#projects .project-entry .project-status-active {
+				background: rgba(109, 180, 128, 0.18);
+				border-color: rgba(109, 180, 128, 0.55);
+			}
+
+			#projects .project-entry .project-status-completed {
+				background: rgba(125, 164, 211, 0.18);
+				border-color: rgba(125, 164, 211, 0.55);
+			}
+
+			#projects .project-entry .project-status-academic {
+				background: rgba(214, 185, 112, 0.16);
+				border-color: rgba(214, 185, 112, 0.55);
+			}
+
+			#projects .project-entry .project-figure {
+				margin: 1.5rem 0 2rem 0;
+			}
+
+				#projects .project-entry .project-figure .image.main {
+					margin: 0;
+				}
+
+				#projects .project-entry .project-figure figcaption {
+					color: rgba(255, 255, 255, 0.65);
+					font-size: 0.8rem;
+					line-height: 1.6;
+					margin-top: 0.65rem;
+				}
+
+			#projects .project-entry .project-meta-group {
+				margin: 1.25rem 0 0 0;
+			}
+
+				#projects .project-entry .project-meta-group ul {
+					margin-bottom: 0;
+				}
+
+			#projects .project-entry .project-meta-label {
+				color: rgba(255, 255, 255, 0.9);
+				display: block;
+				font-size: 0.8rem;
+				font-weight: 600;
+				margin-bottom: 0.45rem;
+			}
+
+		@media screen and (max-width: 736px) {
+
+			#projects .project-entry .project-heading {
+				align-items: flex-start;
+				flex-direction: column;
+			}
+
+		}
+
 /* Footer */
 
 	#footer {

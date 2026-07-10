@@ -165,13 +165,19 @@
 
 	function renderProject(project) {
 		var children = [
-			el('h3', { text: project.title }),
-			el('p', { text: 'Status: ' + project.status })
+			el('div', { className: 'project-heading' }, [
+				el('h3', { text: project.title }),
+				el('span', { className: 'project-status project-status-' + project.status, text: titleFromKey(project.status || '') })
+			])
 		];
 
-		(project.image_paths || []).forEach(function(path) {
-			children.push(el('span', { className: 'image main' }, [
-				el('img', { src: path, alt: project.title })
+		(project.image_paths || []).forEach(function(path, index) {
+			var caption = project.image_captions && project.image_captions[index];
+			children.push(el('figure', { className: 'project-figure' }, [
+				el('span', { className: 'image main' }, [
+					el('img', { src: path, alt: caption || project.title })
+				]),
+				caption ? el('figcaption', { text: caption }) : null
 			]));
 		});
 
@@ -180,20 +186,19 @@
 		});
 
 		if (project.tech_stack && project.tech_stack.length > 0) {
-			children.push(el('h4', { text: 'Tech Stack' }));
-			children.push(list(project.tech_stack));
-		}
-
-		if (project.relevance_tags && project.relevance_tags.length > 0) {
-			children.push(el('h4', { text: 'Relevance Tags' }));
-			children.push(list(project.relevance_tags));
+			children.push(el('div', { className: 'project-meta-group' }, [
+				el('span', { className: 'project-meta-label', text: 'Tech stack' }),
+				list(project.tech_stack)
+			]));
 		}
 
 		if (project.links && project.links.length > 0) {
-			children.push(el('h4', { text: 'Links' }));
-			children.push(el('ul', {}, project.links.map(function(item) {
-				return el('li', {}, [link(item.label, item.url)]);
-			})));
+			children.push(el('div', { className: 'project-meta-group' }, [
+				el('span', { className: 'project-meta-label', text: 'Links' }),
+				el('ul', {}, project.links.map(function(item) {
+					return el('li', {}, [link(item.label, item.url)]);
+				}))
+			]));
 		}
 
 		return el('section', { className: 'project-entry', id: project.slug }, children);
