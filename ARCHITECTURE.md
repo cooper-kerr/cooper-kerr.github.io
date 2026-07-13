@@ -34,9 +34,13 @@ To update portfolio content, edit these JSON files rather than editing `index.ht
 - footer placeholder
 - script includes
 
-`assets/js/content.js` fetches the JSON files from `data/` and renders the live page content into the shell. It creates the About, Experience, Skills, and Projects panels dynamically.
+`assets/js/portfolio-data.js` normalizes the raw JSON into the browser-facing content model. It keeps the JSON files as the source of truth while giving renderers stable defaults for profile fields, skills, experience, project media/caption pairs, statuses, labels, and links.
 
-`assets/js/main.js` contains the HTML5 UP panel behavior. It handles hash-based routing, panel open/close transitions, escape-key closing, body click closing, and initial hash loading.
+`assets/js/content.js` fetches the JSON files from `data/`, passes them through `window.PortfolioData.normalize(raw)`, and renders the live page content into the shell. It creates the About, Experience, Skills, and Projects panels dynamically.
+
+`assets/js/panel-lifecycle.js` owns the deep panel behavior: article discovery, close controls, hash-based routing, panel open/close transitions, escape-key closing, body click closing, scroll restoration, and initial hash loading.
+
+`assets/js/main.js` is the HTML5 UP bootstrap adapter. It removes preload state, configures breakpoints and legacy flex handling, applies nav midpoint classes, waits for `window.portfolioReady`, and initializes the panel lifecycle.
 
 Because content is loaded asynchronously, `main.js` waits for `window.portfolioReady` before binding panel behavior to the rendered articles. This prevents hash navigation from running before the JSON-backed content exists in the DOM.
 
@@ -54,7 +58,17 @@ For routine content updates:
 
 4. Open `http://127.0.0.1:8765/` and verify the updated section.
 
-Use `index.html` only for page shell, metadata, script includes, or navigation structure changes. Use `assets/js/content.js` only when the rendering structure needs to change.
+Use `index.html` only for page shell, metadata, stylesheet/script includes, or navigation structure changes. Use `assets/js/content.js` only when the rendering structure needs to change. Use `assets/js/portfolio-data.js` when JSON shape normalization or safe defaults need to change.
+
+## CSS Modules
+
+Runtime CSS is loaded directly by the browser in this order:
+
+- `assets/css/html5up-dimension.css`: committed HTML5 UP Dimension baseline
+- `assets/css/theme-adapter.css`: JavaScript lifecycle and HTML5 UP behavior selectors such as `is-preload`, `is-article-visible`, `is-switching`, `use-middle`, `.close`, `article.active`, `#bg`, and `#main`
+- `assets/css/portfolio.css`: portfolio visual system, typography, hero layout, project cards, skills, experience, and responsive overrides
+
+`assets/css/main.css` is retained as a legacy stylesheet artifact but is not the runtime source of truth. Do not add new runtime CSS there.
 
 ## Project Images And Links
 
@@ -70,7 +84,13 @@ The repository includes:
 - `sitemap.xml`
 - metadata and Open Graph tags in `index.html`
 
-Update these when the public URL, site description, or primary preview image changes.
+Update these when the public URL, site description, or primary preview image changes. Then run:
+
+```sh
+python3 scripts/check_static_metadata.py
+```
+
+The script checks canonical URL, `og:url`, sitemap URL, robots sitemap, title/`og:title`, profile identity, absolute `og:image`, local image existence, and the sitemap root-only policy.
 
 ## Deployment
 

@@ -1,0 +1,75 @@
+/*
+	HTML5 UP behavior adapter.
+	These selectors are owned by the panel lifecycle JavaScript and should stay
+	independent from portfolio content styling.
+*/
+
+body.is-preload *,
+body.is-preload *:before,
+body.is-preload *:after {
+	animation: none !important;
+	transition: none !important;
+}
+
+body.is-preload #header {
+	filter: blur(0.125rem);
+}
+
+body.is-preload #header > * {
+	opacity: 0;
+}
+
+body.is-preload #header .content .inner {
+	max-height: 0;
+	opacity: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+body.is-preload #bg:before {
+	background-color: #000000;
+}
+
+body.is-preload #footer {
+	opacity: 0;
+}
+
+body.is-article-visible #header,
+body.is-article-visible #footer {
+	filter: blur(0.1rem);
+	opacity: 0;
+	transform: scale(0.95);
+}
+
+body.is-article-visible #bg:after {
+	filter: blur(0.2rem);
+	transform: scale(1.0825);
+}
+
+body.is-switching #main article {
+	transition: none !important;
+}
+
+#header nav.use-middle:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 1px);
+	width: 1px;
+	height: 100%;
+	background: #ffffff;
+}
+
+#header nav.use-middle ul li.is-middle {
+	border-left: 0;
+}
+
+#main article.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+#main article .close {
+	cursor: pointer;
+}

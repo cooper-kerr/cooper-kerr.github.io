@@ -250,29 +250,6 @@ Investigated stereographic and Archimedean projections, analyzed the tradeoff be
 
 - Spherical triangle diagram used in the geometry research project.
 
-### Recruiter Portfolio System
-
-**Slug:** recruiter-portfolio-system
-
-**Status:** active
-
-**Relevance Tags:** portfolio, frontend, content-systems, ai-assisted-development
-
-**Description:**
-
-Built a static, recruiter-facing portfolio site that presents projects, experience, skills, education, links, and project visuals from structured JSON content instead of hard-coded page copy.
-
-Refactored the site into a maintainable content model using browser-native JavaScript rendering, with `data/projects.json`, `data/experience.json`, `data/skills.json`, and `data/profile.json` serving as the portfolio's source of truth.
-
-Added `career_context.md` as an AI-assisted resume-generation source so project descriptions, exact metrics, relevance tags, and experience bullets can be reused consistently when tailoring applications.
-
-**Tech Stack:** HTML, CSS, JavaScript, JSON, GitHub Pages
-
-**Links:**
-
-- Live Portfolio: https://cooper-kerr.github.io/
-- GitHub Repo: https://github.com/cooper-kerr/cooper-kerr.github.io
-
 <!--
 Regeneration note:
 After editing data/profile.json, data/skills.json, data/experience.json, or data/projects.json, regenerate this derived export by re-running the same process used to create career_context.md: pull the updated content from those four JSON files, preserve full experience bullets and project descriptions verbatim, keep experience ordered in reverse chronological order by start date, and commit the refreshed file.

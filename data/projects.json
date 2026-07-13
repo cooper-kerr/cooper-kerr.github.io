@@ -157,39 +157,5 @@
       "research"
     ],
     "status": "academic"
-  },
-  {
-    "title": "Recruiter Portfolio System",
-    "slug": "recruiter-portfolio-system",
-    "description": [
-      "Built a static, recruiter-facing portfolio site that presents projects, experience, skills, education, links, and project visuals from structured JSON content instead of hard-coded page copy.",
-      "Refactored the site into a maintainable content model using browser-native JavaScript rendering, with `data/projects.json`, `data/experience.json`, `data/skills.json`, and `data/profile.json` serving as the portfolio's source of truth.",
-      "Added `career_context.md` as an AI-assisted resume-generation source so project descriptions, exact metrics, relevance tags, and experience bullets can be reused consistently when tailoring applications."
-    ],
-    "tech_stack": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "JSON",
-      "GitHub Pages"
-    ],
-    "links": [
-      {
-        "label": "Live Portfolio",
-        "url": "https://cooper-kerr.github.io/"
-      },
-      {
-        "label": "GitHub Repo",
-        "url": "https://github.com/cooper-kerr/cooper-kerr.github.io"
-      }
-    ],
-    "image_paths": [],
-    "relevance_tags": [
-      "portfolio",
-      "frontend",
-      "content-systems",
-      "ai-assisted-development"
-    ],
-    "status": "active"
   }
 ]

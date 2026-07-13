@@ -46,12 +46,36 @@
 		}));
 	}
 
-	function link(label, url) {
+	function pillList(items, className) {
+		return el('ul', { className: className || 'pill-list' }, (items || []).map(function(item) {
+			return el('li', { text: item });
+		}));
+	}
+
+	function link(label, url, isExternal) {
+		if (!label || !url)
+			return null;
+
+		isExternal = typeof isExternal === 'boolean' ? isExternal : /^https?:\/\//i.test(url);
+
 		return el('a', {
 			href: url,
-			target: url.indexOf('http') === 0 ? '_blank' : '_self',
-			rel: url.indexOf('http') === 0 ? 'noopener noreferrer' : ''
+			target: isExternal ? '_blank' : '_self',
+			rel: isExternal ? 'noopener noreferrer' : ''
 		}, [label]);
+	}
+
+	function intersperse(nodes, separator) {
+		return nodes.reduce(function(result, node, index) {
+			if (!node)
+				return result;
+
+			if (result.length > 0)
+				result.push(separator);
+
+			result.push(node);
+			return result;
+		}, []);
 	}
 
 	function renderHeader(profile) {
@@ -64,24 +88,34 @@
 
 		if (intro) {
 			intro.innerHTML = '';
+			intro.appendChild(el('p', { className: 'hero-kicker', text: 'Applied modeling / sports science / market analytics' }));
 			intro.appendChild(el('h1', { text: profile.name }));
 			intro.appendChild(el('p', { text: profile.bio }));
-			intro.appendChild(el('p', {}, [
-				'Contact: ',
-				link(profile.email, 'mailto:' + profile.email),
-				' · ',
-				link('LinkedIn', profile.linkedin),
-				' · ',
-				link('GitHub', profile.github)
+			intro.appendChild(el('div', { className: 'hero-stats' }, [
+				el('span', {}, [
+					el('strong', { text: '3.88' }),
+					' GPA'
+				]),
+				el('span', {}, [
+					el('strong', { text: '40k/day' }),
+					' WebFit usage'
+				]),
+				el('span', {}, [
+					el('strong', { text: '30k+' }),
+					' records daily'
+				])
 			]));
+			intro.appendChild(el('p', { className: 'hero-contact' }, [
+				'Contact: '
+			].concat(intersperse([
+				link(profile.email, profile.email ? 'mailto:' + profile.email : ''),
+				link('LinkedIn', profile.linkedin),
+				link('GitHub', profile.github)
+			], ' · '))));
 		}
 
 		if (navList) {
 			navList.innerHTML = '';
-			navList.style.display = 'flex';
-			navList.style.flexDirection = 'row';
-			navList.style.justifyContent = 'center';
-			navList.style.alignItems = 'center';
 
 			[
 				['About', '#about'],
@@ -100,20 +134,27 @@
 		var children = [
 			el('h2', { className: 'major', text: 'About' }),
 			el('p', { text: profile.bio }),
-			el('h3', { text: 'Education' })
+			el('div', { className: 'section-grid' }, [
+				el('div', { className: 'info-panel' }, [
+					el('h3', { text: 'Education' })
+				]),
+				el('div', { className: 'info-panel' }, [
+					el('h3', { text: 'GPA' }),
+					el('p', { className: 'metric-large', text: profile.gpa })
+				])
+			])
 		];
 
+		var educationPanel = children[2].children[0];
 		(profile.education || []).forEach(function(entry) {
-			children.push(el('h4', { text: entry.institution }));
-			children.push(el('p', { text: entry.degree + ' · Expected graduation: ' + entry.graduation }));
+			educationPanel.appendChild(el('h4', { text: entry.institution }));
+			educationPanel.appendChild(el('p', { text: entry.degree + ' · Expected graduation: ' + entry.graduation }));
 		});
 
-		children.push(el('h3', { text: 'GPA' }));
-		children.push(el('p', { text: profile.gpa }));
 		children.push(el('h3', { text: 'Scholarships' }));
-		children.push(list(profile.scholarships));
+		children.push(pillList(profile.scholarships));
 		children.push(el('h3', { text: 'Relevant Coursework' }));
-		children.push(list(profile.coursework));
+		children.push(pillList(profile.coursework));
 
 		return el('article', { id: 'about' }, children);
 	}
@@ -129,25 +170,23 @@
 		}
 
 		experience.forEach(function(role) {
-			children.push(el('h3', { text: role.title }));
-			children.push(el('p', { text: [role.company, role.location, role.dates].filter(Boolean).join(' · ') }));
+			var roleChildren = [
+				el('div', { className: 'role-heading' }, [
+					el('h3', { text: role.title }),
+					el('span', { className: 'role-dates', text: role.dates })
+				]),
+				el('p', { className: 'role-meta', text: [role.company, role.location].filter(Boolean).join(' · ') })
+			];
 
 			if (role.bullets && role.bullets.length > 0)
-				children.push(list(role.bullets));
+				roleChildren.push(list(role.bullets));
 			else
-				children.push(el('p', { text: 'Resume bullets pending exact source text.' }));
+				roleChildren.push(el('p', { text: 'Resume bullets pending exact source text.' }));
+
+			children.push(el('section', { className: 'experience-entry' }, roleChildren));
 		});
 
 		return el('article', { id: 'experience' }, children);
-	}
-
-	function titleFromKey(key) {
-		return key
-			.split('_')
-			.map(function(part) {
-				return part.charAt(0).toUpperCase() + part.slice(1);
-			})
-			.join(' ');
 	}
 
 	function renderSkills(skills) {
@@ -156,8 +195,10 @@
 		];
 
 		Object.keys(skills || {}).forEach(function(category) {
-			children.push(el('h3', { text: titleFromKey(category) }));
-			children.push(list(skills[category]));
+			children.push(el('section', { className: 'skill-group' }, [
+				el('h3', { text: window.PortfolioData.titleFromKey(category) }),
+				pillList(skills[category])
+			]));
 		});
 
 		return el('article', { id: 'skills' }, children);
@@ -167,17 +208,16 @@
 		var children = [
 			el('div', { className: 'project-heading' }, [
 				el('h3', { text: project.title }),
-				el('span', { className: 'project-status project-status-' + project.status, text: titleFromKey(project.status || '') })
+				el('span', { className: 'project-status ' + project.statusClass, text: project.statusLabel })
 			])
 		];
 
-		(project.image_paths || []).forEach(function(path, index) {
-			var caption = project.image_captions && project.image_captions[index];
+		(project.media || []).forEach(function(item) {
 			children.push(el('figure', { className: 'project-figure' }, [
 				el('span', { className: 'image main' }, [
-					el('img', { src: path, alt: caption || project.title })
+					el('img', { src: item.src, alt: item.alt })
 				]),
-				caption ? el('figcaption', { text: caption }) : null
+				item.caption ? el('figcaption', { text: item.caption }) : null
 			]));
 		});
 
@@ -185,10 +225,17 @@
 			children.push(el('p', { text: paragraph }));
 		});
 
-		if (project.tech_stack && project.tech_stack.length > 0) {
+		if (project.techStack && project.techStack.length > 0) {
 			children.push(el('div', { className: 'project-meta-group' }, [
 				el('span', { className: 'project-meta-label', text: 'Tech stack' }),
-				list(project.tech_stack)
+				pillList(project.techStack, 'pill-list compact')
+			]));
+		}
+
+		if (project.relevanceTags && project.relevanceTags.length > 0) {
+			children.push(el('div', { className: 'project-meta-group' }, [
+				el('span', { className: 'project-meta-label', text: 'Relevance' }),
+				pillList(project.relevanceTags, 'pill-list compact')
 			]));
 		}
 
@@ -196,7 +243,7 @@
 			children.push(el('div', { className: 'project-meta-group' }, [
 				el('span', { className: 'project-meta-label', text: 'Links' }),
 				el('ul', {}, project.links.map(function(item) {
-					return el('li', {}, [link(item.label, item.url)]);
+					return el('li', {}, [link(item.label, item.url, item.isExternal)]);
 				}))
 			]));
 		}
@@ -223,13 +270,11 @@
 			return;
 
 		footer.innerHTML = '';
-		footer.appendChild(el('p', {}, [
-			link(profile.email, 'mailto:' + profile.email),
-			' · ',
+		footer.appendChild(el('p', {}, intersperse([
+			link(profile.email, profile.email ? 'mailto:' + profile.email : ''),
 			link('LinkedIn', profile.linkedin),
-			' · ',
 			link('GitHub', profile.github)
-		]));
+		], ' · ')));
 		footer.appendChild(el('p', { className: 'copyright' }, [
 			'Design: ',
 			link('HTML5 UP', 'https://html5up.net')
@@ -260,12 +305,12 @@
 			fetchJson(dataFiles.projects)
 		])
 		.then(function(results) {
-			render({
+			render(window.PortfolioData.normalize({
 				profile: results[0],
 				skills: results[1],
 				experience: results[2],
 				projects: results[3]
-			});
+			}));
 		})
 		.catch(function(error) {
 			var main = document.getElementById('main');
