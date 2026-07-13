@@ -2,7 +2,8 @@
   "programming_languages": [
     "Python/Scikit-Learn/TensorFlow",
     "R",
-    "SQL"
+    "SQL",
+    "JavaScript"
   ],
   "ml_data_libraries": [
     "Scikit-Learn",
@@ -11,7 +12,13 @@
   "cloud_platforms": [
     "Vercel",
     "Firebase/Firestore",
-    "AWS S3/EC2"
+    "AWS S3/EC2",
+    "GitHub Pages"
+  ],
+  "web_content": [
+    "HTML",
+    "CSS",
+    "JSON"
   ],
   "tools": [
     "Git",

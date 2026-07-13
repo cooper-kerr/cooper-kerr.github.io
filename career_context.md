@@ -51,6 +51,7 @@ This document contains Cooper Kerr's full career background: education, skills, 
 - Python/Scikit-Learn/TensorFlow
 - R
 - SQL
+- JavaScript
 
 ### ML Data Libraries
 
@@ -62,6 +63,13 @@ This document contains Cooper Kerr's full career background: education, skills, 
 - Vercel
 - Firebase/Firestore
 - AWS S3/EC2
+- GitHub Pages
+
+### Web Content
+
+- HTML
+- CSS
+- JSON
 
 ### Tools
 
@@ -241,6 +249,29 @@ Investigated stereographic and Archimedean projections, analyzed the tradeoff be
 **Image Captions:**
 
 - Spherical triangle diagram used in the geometry research project.
+
+### Recruiter Portfolio System
+
+**Slug:** recruiter-portfolio-system
+
+**Status:** active
+
+**Relevance Tags:** portfolio, frontend, content-systems, ai-assisted-development
+
+**Description:**
+
+Built a static, recruiter-facing portfolio site that presents projects, experience, skills, education, links, and project visuals from structured JSON content instead of hard-coded page copy.
+
+Refactored the site into a maintainable content model using browser-native JavaScript rendering, with `data/projects.json`, `data/experience.json`, `data/skills.json`, and `data/profile.json` serving as the portfolio's source of truth.
+
+Added `career_context.md` as an AI-assisted resume-generation source so project descriptions, exact metrics, relevance tags, and experience bullets can be reused consistently when tailoring applications.
+
+**Tech Stack:** HTML, CSS, JavaScript, JSON, GitHub Pages
+
+**Links:**
+
+- Live Portfolio: https://cooper-kerr.github.io/
+- GitHub Repo: https://github.com/cooper-kerr/cooper-kerr.github.io
 
 <!--
 Regeneration note:
