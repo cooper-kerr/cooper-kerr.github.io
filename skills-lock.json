@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "cover-letter": {
+      "source": "claude-office-skills/skills",
+      "sourceType": "github",
+      "skillPath": "cover-letter/SKILL.md",
+      "computedHash": "3ac95c65245e20a21e23dd47569cf7dcb687f3425bcbf25e349d8dc64b924786"
+    },
+    "resume-tailor": {
+      "source": "claude-office-skills/skills",
+      "sourceType": "github",
+      "skillPath": "resume-tailor/SKILL.md",
+      "computedHash": "ff501a55ad92e727dc707a0fb92fb7ecb5d37dcf5de13c6fcc2853da0a36e6b5"
+    }
+  }
+}

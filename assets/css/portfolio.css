@@ -486,6 +486,21 @@
 		padding-top: 1.25rem;
 	}
 
+	#projects .project-group-heading {
+		border-bottom: 1px solid var(--line);
+		color: var(--red);
+		font-family: "IBM Plex Mono", monospace;
+		font-size: 0.8rem;
+		letter-spacing: 0.04em;
+		margin: 2rem 0 0.85rem;
+		padding-bottom: 0.45rem;
+		text-transform: uppercase;
+	}
+
+	#projects .project-group-heading:first-of-type {
+		margin-top: 0;
+	}
+
 	#projects .project-entry:first-of-type {
 		border-top: 1px solid var(--line);
 		margin-top: 0;
@@ -526,6 +541,10 @@
 
 	#projects .project-entry .project-status-academic {
 		background: var(--moss);
+	}
+
+	#projects .project-entry .project-status-archived {
+		background: var(--graphite);
 	}
 
 	#projects .project-entry .project-status-unknown {

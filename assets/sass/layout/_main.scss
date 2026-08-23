@@ -101,6 +101,14 @@
 		}
 
 		#projects {
+			.project-group-heading {
+				margin: 2rem 0 1rem;
+			}
+
+			.project-group-heading:first-of-type {
+				margin-top: 0;
+			}
+
 			.project-entry {
 				border-top: solid _size(border-width) transparentize(_palette(border), 0.8);
 				margin-top: 2.75rem;
@@ -151,6 +159,11 @@
 				.project-status-academic {
 					background: rgba(214, 185, 112, 0.16);
 					border-color: rgba(214, 185, 112, 0.55);
+				}
+
+				.project-status-archived {
+					background: rgba(255, 255, 255, 0.08);
+					border-color: rgba(255, 255, 255, 0.35);
 				}
 
 				.project-figure {

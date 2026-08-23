@@ -26,6 +26,7 @@
       "sports-analytics",
       "python"
     ],
+    "category": "sports",
     "status": "active"
   },
   {
@@ -59,6 +60,7 @@
       "product",
       "poker"
     ],
+    "category": "other",
     "status": "active"
   },
   {
@@ -75,7 +77,12 @@
       "statistical testing",
       "decision-tree logic"
     ],
-    "links": [],
+    "links": [
+      {
+        "label": "Poster Presentation",
+        "url": "assets/Soccer%20Positional%20Demands%20Poster%20Presentation.pptx"
+      }
+    ],
     "image_paths": [
       "images/Table_Soccer.png",
       "images/Figure_1.1.png",
@@ -92,7 +99,8 @@
       "statistics",
       "research"
     ],
-    "status": "active"
+    "category": "sports",
+    "status": "archived"
   },
   {
     "title": "Financial Bubble Project",
@@ -124,7 +132,8 @@
       "python",
       "dashboard"
     ],
-    "status": "completed"
+    "category": "other",
+    "status": "archived"
   },
   {
     "title": "Summer Math Research",
@@ -156,6 +165,7 @@
       "proof-based",
       "research"
     ],
-    "status": "academic"
+    "category": "other",
+    "status": "archived"
   }
 ]

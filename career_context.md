@@ -86,7 +86,7 @@ This document contains Cooper Kerr's full career background: education, skills, 
 **Dates:** May 2026 – Present
 
 - Analyzed API request volume and menu-usage patterns for PING Copilot pre- and post-redesign, identifying usage and engagement shifts and delivering actionable, data-backed findings to stakeholders across PING's Copilot ecosystem
-- Leading the refactor and redesign of PING's WebFit Fullbag website (historically used ~40,000 times/day), improving core logic to increase recommendation accuracy ahead of a planned relaunch
+- Leading the refactor and redesign of PING's WebFit Fullbag website (historically used ~4000 times/day), improving core logic to increase recommendation accuracy ahead of a planned relaunch
 - Redesigned a predictive model estimating wedge launch conditions from 7-iron launch data alone, achieving prediction accuracy of 87% and reducing mean absolute error by roughly 40% across all launch condition metrics
 
 ### Research Intern, University of Sydney (Study Abroad)
@@ -118,6 +118,8 @@ This document contains Cooper Kerr's full career background: education, skills, 
 
 **Status:** active
 
+**Category:** sports
+
 **Relevance Tags:** data-science, machine-learning, sports-analytics, python
 
 **Description:**
@@ -139,6 +141,8 @@ The Streamlit demo is currently local-only; no public demo URL is listed yet.
 **Slug:** poker-trainer
 
 **Status:** active
+
+**Category:** other
 
 **Relevance Tags:** full-stack, ai-assisted-development, product, poker
 
@@ -168,7 +172,9 @@ The product evolved through an AWS-to-Firebase/Firestore migration and includes 
 
 **Slug:** sports-science-positional-demands
 
-**Status:** active
+**Status:** archived
+
+**Category:** sports
 
 **Relevance Tags:** sports-analytics, data-science, statistics, research
 
@@ -181,6 +187,10 @@ Merged the positional-demands analysis into the same body of work: Catapult wear
 Supporting methodology included summary statistics, independent t-tests for duration, player load, PL/min, total distance, and high-speed distance, plus Mann-Whitney U tests for non-normal IMA metrics. Statistical significance was evaluated at p-values <= 0.05.
 
 **Tech Stack:** Catapult, Smartabase, statistical testing, decision-tree logic
+
+**Links:**
+
+- Poster Presentation: assets/Soccer%20Positional%20Demands%20Poster%20Presentation.pptx
 
 **Image Paths:**
 
@@ -198,7 +208,9 @@ Supporting methodology included summary statistics, independent t-tests for dura
 
 **Slug:** financial-bubble-internship
 
-**Status:** completed
+**Status:** archived
+
+**Category:** other
 
 **Relevance Tags:** finance, data-science, python, dashboard
 
@@ -224,7 +236,9 @@ To support scalability and automation, I developed an optimized Python-based Git
 
 **Slug:** math-research
 
-**Status:** academic
+**Status:** archived
+
+**Category:** other
 
 **Relevance Tags:** mathematics, proof-based, research
 

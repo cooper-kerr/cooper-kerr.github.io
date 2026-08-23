@@ -6,7 +6,7 @@
     "dates": "May 2026 – Present",
     "bullets": [
       "Analyzed API request volume and menu-usage patterns for PING Copilot pre- and post-redesign, identifying usage and engagement shifts and delivering actionable, data-backed findings to stakeholders across PING's Copilot ecosystem",
-      "Leading the refactor and redesign of PING's WebFit Fullbag website (historically used ~40,000 times/day), improving core logic to increase recommendation accuracy ahead of a planned relaunch",
+      "Leading the refactor and redesign of PING's WebFit Fullbag website (historically used ~4000 times/day), improving core logic to increase recommendation accuracy ahead of a planned relaunch",
       "Redesigned a predictive model estimating wedge launch conditions from 7-iron launch data alone, achieving prediction accuracy of 87% and reducing mean absolute error by roughly 40% across all launch condition metrics"
     ]
   },

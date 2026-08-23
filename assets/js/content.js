@@ -255,9 +255,23 @@
 		var children = [
 			el('h2', { className: 'major', text: 'Projects' })
 		];
+		var groups = [
+			{ key: 'sports', label: 'Sports' },
+			{ key: 'other', label: 'Other' }
+		];
 
-		(projects || []).forEach(function(project) {
-			children.push(renderProject(project));
+		groups.forEach(function(group) {
+			var groupProjects = (projects || []).filter(function(project) {
+				return project.category === group.key;
+			});
+
+			if (groupProjects.length === 0)
+				return;
+
+			children.push(el('h3', { className: 'project-group-heading', text: group.label }));
+			groupProjects.forEach(function(project) {
+				children.push(renderProject(project));
+			});
 		});
 
 		return el('article', { id: 'projects' }, children);

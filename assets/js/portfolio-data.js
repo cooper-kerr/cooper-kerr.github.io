@@ -101,6 +101,10 @@
 		return {
 			title: title,
 			slug: asString(raw && raw.slug),
+			category: asString(raw && raw.category, 'other')
+				.toLowerCase()
+				.replace(/[^a-z0-9]+/g, '-')
+				.replace(/^-+|-+$/g, '') || 'other',
 			description: stringArray(raw && raw.description),
 			techStack: stringArray(raw && raw.tech_stack),
 			links: links,
